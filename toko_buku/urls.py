@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('buku/',include('buku.urls')),
+    path('',include('buku.urls')),
     path('admin/', admin.site.urls),
 
 ]
