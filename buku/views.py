@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from django.http import HttpResponse, Http404
 from  django.template import loader
@@ -16,8 +16,5 @@ def index(request):
 
 
 def detail(request, buku_id):
-    try:
-        buku = Buku.objects.get(pk=buku_id)
-    except Buku.DoesNotExist:
-        raise Http404("Buku tidak tersedia")
+    buku = get_object_or_404(Buku, pk=buku_id)
     return render(request, 'buku/detail.html', {'buku': buku})
