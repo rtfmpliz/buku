@@ -26,7 +26,7 @@ class Pensyarah(models.Model):
 class Buku(models.Model):
     penerbit = models.ForeignKey(Penerbit, on_delete=models.DO_NOTHING)
     judul = models.CharField(max_length=200)
-    # penulis = models.ForeignKey(Penulis, on_delete=models.DO_NOTHING)
+    penulis = models.ForeignKey(Penulis, on_delete=models.DO_NOTHING, null=True)
     pensyarah = models.ForeignKey(Pensyarah, on_delete=models.DO_NOTHING)
     hal = models.IntegerField(default=0)
     berat = models.IntegerField(default=0)
