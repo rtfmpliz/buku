@@ -1,7 +1,8 @@
 {% if latest_buku_list %}
     <ul>
     {% for buku in latest_buku_list %}
-        <li><a href="/buku/{{ buku.id }}/">{{ buku.judul }}</a></li>
+        <li><a href="{% url 'buku:detail'  buku.id %}">{{ buku.judul }}</a></li>
+<!--        <li><a href="{% url 'buku:detail' buku.id %}">{{ buku.judul }}</a></li>-->
     {% endfor %}
     </ul>
 {% else %}
