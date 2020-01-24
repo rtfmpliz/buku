@@ -28,6 +28,13 @@ class Buku(models.Model):
     judul = models.CharField(max_length=200)
     # penulis = models.ForeignKey(Penulis, on_delete=models.DO_NOTHING)
     pensyarah = models.ForeignKey(Pensyarah, on_delete=models.DO_NOTHING)
+    hal = models.IntegerField()
+    berat = models.IntegerField()
+    harganormal = models.DecimalField()
+    diskon = models.DecimalField()
+    photo1 = models.CharField(max_length=200)
+    photo2 = models.CharField(max_length=200)
+
 
     def __str__(self):
         return self.judul
